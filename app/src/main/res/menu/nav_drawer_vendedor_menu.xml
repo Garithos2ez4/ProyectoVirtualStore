@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group
+        android:id="@+id/grupo_op"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/op_inicio_v"
+            android:title="@string/op_inicio_v"
+            android:icon="@drawable/icono_inicio"/>
+        <item
+            android:id="@+id/op_mi_tienda_v"
+            android:title="@string/op_mitienda_v"
+            android:icon="@drawable/icono_mitienda"/>
+        <item
+            android:id="@+id/op_resenia_v"
+            android:title="@string/op_resenia_v"
+            android:icon="@drawable/icono_resenias"/>
+
+
+
+    </group>
+    <item
+        android:id="@+id/op_cerrar_sesion_v"
+        android:title="@string/op_cerrarsesion_v"
+        android:icon="@drawable/icono_salir"/>
+
+</menu>

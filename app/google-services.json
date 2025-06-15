@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "699097416713",
+    "project_id": "sistema-factura-58a82",
+    "storage_bucket": "sistema-factura-58a82.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:699097416713:android:4126d76b83ed87c8bda4d8",
+        "android_client_info": {
+          "package_name": "com.example.sistemadefacturacion_pruni"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA48cG-OhWElb2IHx_X8OlzTGG17LAPDUk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

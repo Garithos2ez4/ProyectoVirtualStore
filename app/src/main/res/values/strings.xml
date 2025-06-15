@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Sistema de Facturacion - Pruni</string>
+    <string name="op_inicio_v">Inicio</string>
+    <string name="op_mitienda_v">Mi tienda</string>
+    <string name="op_resenia_v">Reseñas</string>
+    <string name="op_cerrarsesion_v">Cerrar Sesión</string>
+    <string name="op_mis_productos">Mis Productos</string>
+    <string name="op_mis_ordenes_v">Mis  Ordenes</string>
+
+
 </resources>
