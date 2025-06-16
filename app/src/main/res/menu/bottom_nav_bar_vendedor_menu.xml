@@ -12,7 +12,4 @@
         android:id="@+id/op_mis_ordenes"
         android:title="@string/op_mis_ordenes_v"
         android:icon="@drawable/icono_ordenes"/>
-
-
-
 </menu>

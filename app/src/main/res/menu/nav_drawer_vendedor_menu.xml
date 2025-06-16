@@ -24,6 +24,6 @@
     <item
         android:id="@+id/op_cerrar_sesion_v"
         android:title="@string/op_cerrarsesion_v"
-        android:icon="@drawable/icono_salir"/>
+        android:icon="@drawable/logout_24px"/>
 
 </menu>

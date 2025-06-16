@@ -6,6 +6,9 @@
     <string name="op_cerrarsesion_v">Cerrar Sesión</string>
     <string name="op_mis_productos">Mis Productos</string>
     <string name="op_mis_ordenes_v">Mis  Ordenes</string>
+    
+    
+    <string name="txt_bienvenido">Bienvenid@</string>
 
 
 </resources>
