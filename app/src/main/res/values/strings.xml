@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Sistema de Facturacion - Pruni</string>
+
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mitienda_v">Mi tienda</string>
     <string name="op_resenia_v">Reseñas</string>

@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sistemadefacturacion_pruni.Vendedor.MainActivityVendedor
 
 class SplashScreenActivity : AppCompatActivity() {
 
@@ -31,7 +32,7 @@ class SplashScreenActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                startActivity(Intent(applicationContext, MainActivity::class.java))
+                startActivity(Intent(applicationContext, MainActivityVendedor::class.java))
                 finishAffinity()
             }
         }.start()
