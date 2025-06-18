@@ -1,5 +1,6 @@
 package com.example.sistemadefacturacion_pruni.Vendedor
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
@@ -20,16 +21,24 @@ import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.Fra
 import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentReseniasV
 import com.example.sistemadefacturacion_pruni.databinding.ActivityMainVendedorBinding
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+
 
 class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainVendedorBinding
+    private var firebaseAuth : FirebaseAuth?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-      binding = ActivityMainVendedorBinding.inflate(layoutInflater)
+
+        binding = ActivityMainVendedorBinding.inflate(layoutInflater)
+
         setContentView(binding.root)
 
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        comprobarSession()
 
         binding.navigationView.setNavigationItemSelectedListener(this)
 
@@ -44,12 +53,26 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
 
         }
 
-    private fun replaceFragment(fragment: Fragment) {
-     supportFragmentManager
-         .beginTransaction()
-         .replace(R.id.navFragment,fragment)
-         .commit()
+    private fun comprobarSession() {
+        if (firebaseAuth!!.currentUser==null){
+            startActivity(
+                Intent(applicationContext,RegistroVendedorActivity::class.java))
+                    Toast.makeText(applicationContext,"Vendedor@ NO Registrado",Toast.LENGTH_LONG).show()
+
+
+        }else{
+            Toast.makeText(applicationContext,"Vendedor en linea",Toast.LENGTH_SHORT).show()
+        }
     }
+
+
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.navFragment,fragment)
+            .commit()
+    }
+
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         when (item.itemId){
