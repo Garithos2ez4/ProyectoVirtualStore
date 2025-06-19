@@ -52,11 +52,18 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
         binding.navigationView.setCheckedItem(R.id.op_inicio_v)
 
         }
+    private fun cerrarSession(){
+        firebaseAuth!!.signOut()
+        startActivity(Intent(applicationContext,LoginVendedorActivity::class.java))
+        finish()
+        Toast.makeText(applicationContext,"Saliste de la aplicacion  ",Toast.LENGTH_LONG).show()
+
+    }
 
     private fun comprobarSession() {
         if (firebaseAuth!!.currentUser==null){
             startActivity(
-                Intent(applicationContext,RegistroVendedorActivity::class.java))
+                Intent(applicationContext,LoginVendedorActivity::class.java))
                     Toast.makeText(applicationContext,"Vendedor@ NO Registrado",Toast.LENGTH_LONG).show()
 
 
@@ -86,7 +93,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
                 replaceFragment(FragmentReseniasV())
             }
             R.id.op_cerrar_sesion_v->{
-                Toast.makeText(applicationContext,"Saliste de la aplicacion",Toast.LENGTH_LONG).show()
+                cerrarSession()
             }
             R.id.op_mis_productos->{
                 replaceFragment(FragmentMisProductosV())
