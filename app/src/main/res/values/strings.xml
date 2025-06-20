@@ -23,10 +23,17 @@
     <string name="op_mis_ordenes_v">Mis  Ordenes</string>
     <!--Bottom navi Cliente-->
     <string name="op_tienda_c">Tienda</string>
-    <string name="op_mi_ordenes_c">Mis Órdenes</string>
+    <string name="op_mis_ordenes_c">Mis Órdenes</string>
 
 
     <string name="txt_bienvenido">Bienvenid@</string>
+    <!--Registro cliente-->
+    <string name="txtRegistroc">Registro de cliente</string>
+    <string name="etNombres">Nombres Completos</string>
+    <string name="etEmail">Email</string>
+    <string name="btnLoginC">Ingresar</string>
+    <string name="tvRegistrarC">Registrarse</string>
+    <string name="btnRegistrarC">Registrarme</string>
 
     <!--Registro vendedor-->
     <string name="txtRegistrov">Registro de vendedor</string>
