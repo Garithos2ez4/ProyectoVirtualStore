@@ -48,6 +48,14 @@
     <string name="txtNoCuenta">¿No tienes una cuenta?</string>
     <string name="tvRegistraV">Registrarse</string>
 
+    <!--Login Cliente-->
+    <string name="txtLoginC">Login de cliente</string>
+    <string name="etEmailC">Email</string>
+    <string name="tvRegistraC">Registrarse</string>
+
+
+
+
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
 

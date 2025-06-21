@@ -42,6 +42,7 @@ class   RegistroVendedorActivity : AppCompatActivity() {
     private fun validarInformacion() {
     nombres=binding.etNombresV.text.toString().trim()
     email=binding.etEmailV.text.toString().trim()
+
     password=binding.etPassword.text.toString().trim()
     cpassword=binding.etCpassword.text.toString().trim()
         if (nombres.isEmpty()){
