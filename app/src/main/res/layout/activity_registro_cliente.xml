@@ -86,8 +86,8 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginC"
-            android:text="@string/btnLoginC"
+            android:id="@+id/btnRegistrarC"
+            android:text="@string/btnRegistrarC"
             android:textAllCaps="true"
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
@@ -95,24 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
 
-        <TextView
-            android:text="@string/txtNoCuenta"
-            android:layout_gravity="end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <TextView
-            android:id="@+id/tvRegistrarC"
-            android:text="@string/tvRegistrarC"
-            android:layout_gravity="end"
-            android:layout_marginEnd="10dp"
-            android:layout_marginTop="10dp"
-            android:textSize="17sp"
-            android:textStyle="bold"
-            android:textColor="@color/celeste_oscuro"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+
 
 
     </androidx.appcompat.widget.LinearLayoutCompat>

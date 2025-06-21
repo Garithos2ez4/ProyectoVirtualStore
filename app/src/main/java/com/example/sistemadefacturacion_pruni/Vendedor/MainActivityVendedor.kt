@@ -14,6 +14,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.sistemadefacturacion_pruni.R
+import com.example.sistemadefacturacion_pruni.SeleccionarTipoActivity
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentMisProductosV
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentOrdenesV
 import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentInicioV
@@ -54,7 +55,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
         }
     private fun cerrarSession(){
         firebaseAuth!!.signOut()
-        startActivity(Intent(applicationContext,LoginVendedorActivity::class.java))
+        startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
         finish()
         Toast.makeText(applicationContext,"Saliste de la aplicacion  ",Toast.LENGTH_LONG).show()
 
@@ -63,9 +64,7 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
     private fun comprobarSession() {
         if (firebaseAuth!!.currentUser==null){
             startActivity(
-                Intent(applicationContext,LoginVendedorActivity::class.java))
-                    Toast.makeText(applicationContext,"Vendedor@ NO Registrado",Toast.LENGTH_LONG).show()
-
+                Intent(applicationContext,SeleccionarTipoActivity::class.java))
 
         }else{
             Toast.makeText(applicationContext,"Vendedor en linea",Toast.LENGTH_SHORT).show()

@@ -5,11 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Patterns
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.databinding.ActivityLoginVendedorBinding
 import com.google.firebase.auth.FirebaseAuth
 
