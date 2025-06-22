@@ -54,7 +54,7 @@
                 android:drawablePadding="5dp"/>
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnLoginC"
+            android:id="@+id/btnoLginC"
             android:text="@string/btnLoginC"
             android:textAllCaps="true"
             android:layout_gravity="center"

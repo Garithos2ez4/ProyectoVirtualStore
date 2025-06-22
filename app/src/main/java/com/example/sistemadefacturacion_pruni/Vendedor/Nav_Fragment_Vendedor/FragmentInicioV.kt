@@ -1,6 +1,7 @@
 package com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.widget.Toast
 import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentMisProductosV
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentOrdenesV
+import com.example.sistemadefacturacion_pruni.Vendedor.Productos.AgregarProductoActivity
 import com.example.sistemadefacturacion_pruni.databinding.FragmentInicioVBinding
 
 
@@ -46,7 +48,7 @@ class FragmentInicioV : Fragment() {
         binding.bottomNavigation.selectedItemId = R.id.op_mis_productos
 
         binding.addFab.setOnClickListener {
-            Toast.makeText(mContext,"Has presionado en boton flotante",Toast.LENGTH_LONG).show()
+            startActivity(Intent(context, AgregarProductoActivity::class.java))
 
         }
 

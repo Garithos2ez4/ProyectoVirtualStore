@@ -56,6 +56,17 @@
     <string name="txtLoginC">Login de cliente</string>
     <string name="etEmailC">Email</string>
     <string name="tvRegistraC">Registrarse</string>
+  <!--PRODUCTOS-->
+    <string name="txtAgregarProductos">Agregar Productos</string>
+
+    <string name="etNombresp">Nombre del producto</string>
+    <string name="etDescripcionp">Descripción</string>
+    <string name="Categoriap">Categoría</string>
+    <string name="etPreciop">Precio</string>"
+    <string name="txtDescuentop">Descuento</string>
+    <string name="etPrecioConDescuentop">Precio con descuento apli.</string>
+    <string name="etNotaDescuentop">Ejm: 10% Desc.</string>
+    <string name="btnAgregarProductop">AgregarProducto</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

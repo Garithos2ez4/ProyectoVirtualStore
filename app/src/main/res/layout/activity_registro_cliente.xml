@@ -31,6 +31,8 @@
             android:layout_height="wrap_content">
             <EditText
                 android:id="@+id/etNombresC"
+                android:drawableStart="@drawable/icon_nombres"
+                android:drawablePadding="10dp"
                 android:hint="@string/etNombres"
                 android:inputType="textPersonName|textCapWords"
                 android:layout_width="match_parent"
