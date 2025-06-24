@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sistema de Facturacion - Pruni</string>
+    <string name="app_name">Tienda Virtual- Pruni</string>
 
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
@@ -38,6 +38,8 @@
     <string name="btnLoginC">Ingresar</string>
     <string name="tvRegistrarC">Registrarse</string>
     <string name="btnRegistrarC">Registrarme</string>
+
+
 
     <!--Registro vendedor-->
     <string name="txtRegistrov">Registro de vendedor</string>
