@@ -9,6 +9,12 @@
             android:id="@+id/op_inicio_v"
             android:title="@string/op_inicio_v"
             android:icon="@drawable/icono_inicio"/>
+
+        <item
+            android:id="@+id/op_categorias_v"
+            android:title="@string/op_categorias_V"
+            android:icon="@drawable/category_24_ico"/>
+
         <item
             android:id="@+id/op_mi_tienda_v"
             android:title="@string/op_mitienda_v"

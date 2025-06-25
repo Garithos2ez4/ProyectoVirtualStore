@@ -33,7 +33,7 @@
         android:layout_below="@+id/toolbarRL"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/imgAgregarProducto"
             android:layout_centerInParent="true"
@@ -41,7 +41,7 @@
             android:src="@drawable/add_products"
             android:layout_width="100dp"
             android:layout_height="100dp"/>
-        
+
     </RelativeLayout>
     <!--Informacion de un producto-->
 
@@ -50,7 +50,7 @@
         android:padding="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -93,20 +93,36 @@
                     android:layout_height="wrap_content"
                     />
             </com.google.android.material.textfield.TextInputLayout>
+            <!--Categoria del producto-->
+
+
+            <TextView
+                android:id="@+id/Categoria"
+                android:text="@string/Categoriap"
+                android:padding="15dp"
+                android:textSize="17sp"
+                android:layout_marginTop="5dp"
+                android:gravity="center_vertical"
+                app:drawableEndCompat="@drawable/ico_abajo"
+                android:background="@drawable/custom_edittext"
+                android:layout_below="@+id/TIL_Descripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
             <!--Precio-->
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/TIL_Precio"
-                android:layout_below="@+id/TIL_Descripcion"
+                android:layout_below="@+id/Categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
+
                 <EditText
                     android:id="@+id/etPrecioP"
-                    android:hint="@string/etPreciop"
-                    android:inputType="numberDecimal"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    />
+                    android:hint="@string/etPreciop"
+                    android:inputType="numberDecimal" />
             </com.google.android.material.textfield.TextInputLayout>
             <androidx.appcompat.widget.SwitchCompat
                 android:id="@+id/descuentoSwitch"

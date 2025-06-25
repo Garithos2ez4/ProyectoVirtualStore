@@ -15,6 +15,7 @@ firebaseAuthV="22.3.1"
 firebaseAuthKtx = "22.3.1"
 firebaseDatabaseV= "20.3.1"
 imagePickerV= "2.1"
+glideV="4.16.0"
 
 
 [libraries]
@@ -31,6 +32,7 @@ firebaseAuth={group="com.google.firebase",name="firebase-auth",version.ref="fire
 firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx", version.ref = "firebaseAuthKtx" }
 firebaseDatabase={group="com.google.firebase",name="firebase-database",version.ref="firebaseDatabaseV"}
 imagePicker={group="com.github.dhaval2404",name="imagepicker",version.ref="imagePickerV"}
+glide={group="com.github.bumptech.glide",name="glide",version.ref="glideV"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

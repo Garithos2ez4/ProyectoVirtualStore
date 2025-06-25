@@ -17,6 +17,7 @@ import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.SeleccionarTipoActivity
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentMisProductosV
 import com.example.sistemadefacturacion_pruni.Vendedor.Botton_Nav_Fragments_Vendedor.FragmentOrdenesV
+import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentCategoriasV
 import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentInicioV
 import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentMiTiendaV
 import com.example.sistemadefacturacion_pruni.Vendedor.Nav_Fragment_Vendedor.FragmentReseniasV
@@ -87,6 +88,9 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
             }
             R.id.op_mi_tienda_v->{
                 replaceFragment(FragmentMiTiendaV())
+            }
+            R.id.op_categorias_v->{
+                replaceFragment(FragmentCategoriasV())
             }
             R.id.op_resenia_v->{
                 replaceFragment(FragmentReseniasV())

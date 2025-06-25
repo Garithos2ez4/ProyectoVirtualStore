@@ -12,6 +12,7 @@
 
     <string name="op_inicio_v">Inicio</string>
     <string name="op_mitienda_v">Mi tienda</string>
+    <string name="op_categorias_V">Categorias</string>
     <string name="op_resenia_v">Reseñas</string>
     <string name="op_cerrarsesion_v">Cerrar Sesión</string>
     <!--Navigation Cliente-->
@@ -40,7 +41,6 @@
     <string name="btnRegistrarC">Registrarme</string>
 
 
-
     <!--Registro vendedor-->
     <string name="txtRegistrov">Registro de vendedor</string>
     <string name="etNombresV">Nombres Completos</string>
@@ -58,7 +58,7 @@
     <string name="txtLoginC">Login de cliente</string>
     <string name="etEmailC">Email</string>
     <string name="tvRegistraC">Registrarse</string>
-  <!--PRODUCTOS-->
+    <!--PRODUCTOS-->
     <string name="txtAgregarProductos">Agregar Productos</string>
 
     <string name="etNombresp">Nombre del producto</string>
@@ -69,6 +69,10 @@
     <string name="etPrecioConDescuentop">Precio con descuento apli.</string>
     <string name="etNotaDescuentop">Ejm: 10% Desc.</string>
     <string name="btnAgregarProductop">AgregarProducto</string>
+
+    <!--Agregar categorias-->
+    <string name="etCategoria">Ingrese Categorias</string>
+    <string name="btnAgregarCategoria">Agregar Categoria</string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
