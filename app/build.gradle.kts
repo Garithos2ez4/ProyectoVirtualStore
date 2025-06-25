@@ -52,6 +52,7 @@ dependencies {
     implementation(libs.firebase.auth.ktx)
     implementation(libs.imagePicker)/*Recortar una imagen del celular*/
     implementation(libs.glide)/*Leer Imagenes*/
+    implementation(libs.storage)/*subir multimedia*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
