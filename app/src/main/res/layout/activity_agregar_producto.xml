@@ -98,6 +98,7 @@
 
             <TextView
                 android:id="@+id/Categoria"
+                android:hint="@string/Categoriap"
                 android:text="@string/Categoriap"
                 android:padding="15dp"
                 android:textSize="17sp"

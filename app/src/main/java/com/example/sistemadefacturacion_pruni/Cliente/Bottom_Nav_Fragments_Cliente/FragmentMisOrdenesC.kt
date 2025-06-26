@@ -9,7 +9,7 @@ import com.example.sistemadefacturacion_pruni.R
 
 
 class FragmentMisOrdenesC : Fragment() {
-    // TODO: Rename and change types of parameters
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
