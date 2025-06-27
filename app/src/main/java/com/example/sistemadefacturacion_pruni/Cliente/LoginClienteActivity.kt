@@ -65,8 +65,8 @@ class LoginClienteActivity : AppCompatActivity() {
         firebaseAuth.signInWithEmailAndPassword(email,password)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this, MainActivityVendedor::class.java))
-                finishAffinity()
+                startActivity(Intent(this, MainActivityCliente::class.java))
+                finish()
                 Toast.makeText(
                     this,
                     "Bienvenido(a)",

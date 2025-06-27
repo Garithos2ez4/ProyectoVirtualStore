@@ -17,13 +17,15 @@ class ModeloProducto {
                  categoria : String,
                  precio : String,
                  precioDescuento : String,
-                 notaDescuento : String){
+                 notaDescuento : String
+    ){
         this.id = id
         this.nombre = nombre
         this.descripcion = descripcion
         this.categoria = categoria
         this.precio = precio
         this.precioDescuento = precioDescuento
+        this.notaDescuento = notaDescuento
     }
 
 

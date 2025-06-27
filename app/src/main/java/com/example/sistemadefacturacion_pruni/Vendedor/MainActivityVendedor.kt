@@ -6,12 +6,9 @@ import android.view.MenuItem
 import android.widget.Toast
 
 import androidx.appcompat.widget.Toolbar
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.SeleccionarTipoActivity

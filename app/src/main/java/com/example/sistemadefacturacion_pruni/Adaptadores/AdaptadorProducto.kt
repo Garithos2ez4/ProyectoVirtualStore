@@ -37,21 +37,35 @@ class AdaptadorProducto  : RecyclerView.Adapter<AdaptadorProducto.HolderProducto
     }
 
     override fun onBindViewHolder(holder: HolderProducto, position: Int) {
-      val modeloProducto = productosArrayList[position]
+        val modeloProducto = productosArrayList[position]
 
         val nombre = modeloProducto.nombre
         val precio = modeloProducto.precio
         val precioDescuento = modeloProducto.precioDescuento
         val notaDescuento = modeloProducto.notaDescuento
-        
-        cargarPrimeraImg(modeloProducto,holder)
 
-        holder.item_nombre_p.text = "${nombre}"
-        holder.item_precio_p.text = "${precio}${" USD"}"
+        cargarPrimeraImg(modeloProducto, holder)
 
+        holder.item_nombre_p.text = nombre
+        holder.item_precio_p.text = "$precio USD"
 
-        
+        // Por defecto los ocultamos
+        holder.item_precio_p_desc.visibility = View.GONE
+        holder.item_nota_p.visibility = View.GONE
+
+        // Mostramos si corresponde
+        if (precioDescuento.isNotEmpty() && precioDescuento != "0" && notaDescuento.isNotEmpty() && notaDescuento != "0") {
+            holder.item_precio_p_desc.text = "$precioDescuento USD"
+            holder.item_nota_p.text = notaDescuento
+            holder.item_precio_p_desc.visibility = View.VISIBLE
+            holder.item_nota_p.visibility = View.VISIBLE
+
     }
+
+
+
+}
+
 
     private fun cargarPrimeraImg(modeloProducto: ModeloProducto, holder: AdaptadorProducto.HolderProducto) {
         val idProducto = modeloProducto.id
@@ -87,6 +101,7 @@ class AdaptadorProducto  : RecyclerView.Adapter<AdaptadorProducto.HolderProducto
         var item_nombre_p = binding.itemNombreP
         var item_precio_p = binding.itemPrecioP
         var item_precio_p_desc = binding.itemPrecioPDesc
+        var item_nota_p = binding.itemNotaP
 
 
 

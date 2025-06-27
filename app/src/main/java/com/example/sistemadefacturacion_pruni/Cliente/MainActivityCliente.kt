@@ -35,6 +35,8 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
         firebaseAuth = FirebaseAuth.getInstance()
         comprobarSesion()
 
+        binding.navigationView.setNavigationItemSelectedListener(this)
+
         val toggle = ActionBarDrawerToggle(
             this,binding.drawerLayout,
             toolbar,R.string.open_drawer,
@@ -45,20 +47,21 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
         toggle.syncState()
 
         replaceFragment(FragmentInicioCliente())
+        binding.navigationView.setCheckedItem(R.id.op_inicio_c)
 
     }
     private fun comprobarSesion (){
         if (firebaseAuth!!.currentUser==null){
-            startActivity(Intent(this@MainActivityCliente, SeleccionarTipoActivity::class.java))
-            finishAffinity()
+            startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
+            finish()
         }else{
-            Toast.makeText(applicationContext,"Usuario en linea",Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext,"Cliente en linea",Toast.LENGTH_SHORT).show()
         }
     }
     private fun cerrarSession(){
         firebaseAuth!!.signOut()
-        startActivity(Intent(this@MainActivityCliente, SeleccionarTipoActivity::class.java))
-        finishAffinity()
+        startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
+        finish()
         Toast.makeText(this,"Cerrando Sesión",Toast.LENGTH_SHORT).show()
     }
 
@@ -69,8 +72,8 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
           .commit()
     }
 
-    override fun onNavigationItemSelected(selectedNavigationItem: MenuItem): Boolean {
-       when(selectedNavigationItem.itemId){
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+       when(item.itemId){
            R.id.op_inicio_c ->{
                replaceFragment(FragmentInicioCliente())
            }

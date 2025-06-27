@@ -38,6 +38,7 @@
             android:id="@+id/item_nota_p"
             android:padding="5dp"
             android:text="@string/items_nota_p"
+            android:visibility="gone"
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -51,6 +52,7 @@
         <TextView
             android:id="@+id/item_precio_p_desc"
             android:text="@string/item_precio_p_desc"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"

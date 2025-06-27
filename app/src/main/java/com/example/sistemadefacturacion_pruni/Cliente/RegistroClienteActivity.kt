@@ -106,8 +106,8 @@ class RegistroClienteActivity : AppCompatActivity() {
             .setValue(datosCliente)
             .addOnSuccessListener {
                 progressDialog.dismiss()
-                startActivity(Intent(this@RegistroClienteActivity,MainActivityCliente::class.java))
-                finishAffinity()
+                startActivity(Intent(this,MainActivityCliente::class.java))
+                finish()
             }
             .addOnFailureListener { e->
                 progressDialog.dismiss()
