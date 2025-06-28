@@ -53,6 +53,7 @@ dependencies {
     implementation(libs.imagePicker)/*Recortar una imagen del celular*/
     implementation(libs.glide)/*Leer Imagenes*/
     implementation(libs.storage)/*subir multimedia*/
+    implementation(libs.authGoogle)/*Iniciar sesión con google*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

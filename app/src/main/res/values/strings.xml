@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Tienda Virtual- Pruni</string>
-
+    <string name="default_web_client_id">699097416713-3isj89rg2th3jkie66nm6a6qcvth1t9k.apps.googleusercontent.com</string>
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
 
@@ -78,7 +78,7 @@
     <string name="item_nombre_c_v">Nombre de categoria</string>
 
 
-    <!--Item categorias -->
+    <!--Item Producto -->
     <string name="item_nombre_p">Nombre del producto</string>
     <string name="item_precio_p">00</string>"
     <string name="item_precio_p_desc">00</string>"

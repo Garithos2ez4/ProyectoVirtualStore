@@ -62,6 +62,29 @@
             app:cornerRadius="8dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="15dp"
+            android:gravity="center">
+            
+            <com.google.android.material.card.MaterialCardView
+                android:src="@drawable/google_icon"
+                android:layout_width="100dp"
+                android:layout_height="60dp">
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:src="@drawable/google_icon"
+                    android:id="@+id/btnLoginGoogle"
+                    android:layout_gravity="center"
+                    android:layout_width="25dp"
+                    android:layout_height="30dp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
         <TextView
             android:text="@string/txtNoCuenta"
             android:layout_gravity="end"
