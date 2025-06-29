@@ -1,6 +1,5 @@
 package com.example.sistemadefacturacion_pruni.Cliente
 
-import android.app.Activity
 import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
@@ -52,8 +51,11 @@ class LoginClienteActivity : AppCompatActivity() {
         binding.btnLoginGoogle.setOnClickListener {
             googleLogin()
         }
+        binding.btnLoginTel.setOnClickListener {
+            startActivity(Intent(this,LoginTelActivity::class.java))
+        }
         binding.tvRegistrarC.setOnClickListener {
-            startActivity(Intent(applicationContext,RegistroClienteActivity::class.java))
+            startActivity(Intent(this,RegistroClienteActivity::class.java))
         }
 
     }

@@ -54,6 +54,8 @@ dependencies {
     implementation(libs.glide)/*Leer Imagenes*/
     implementation(libs.storage)/*subir multimedia*/
     implementation(libs.authGoogle)/*Iniciar sesión con google*/
+    implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
+    implementation(libs.ccp)/*Seleecionar codigo de telefono por país*/
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

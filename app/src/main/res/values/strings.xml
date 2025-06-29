@@ -76,6 +76,7 @@
 
     <!--Item categorias Vendedor-->
     <string name="item_nombre_c_v">Nombre de categoria</string>
+    <string name="item_nombre_c">Nombre de categoria</string>
 
 
     <!--Item Producto -->
@@ -84,6 +85,13 @@
     <string name="item_precio_p_desc">00</string>"
     <string name="items_nota_p">50% OFF</string>"
 
+    <!--Registro con número telefonico-->
+    <string name="txtLoginTelC">Login con teléfono</string>
+    <string name="etTelefonoC">Teléfono </string>
+    <string name="btnEviarCodigo">Enviar código</string>
+    <string name="etCodVer">Código</string>
+    <string name="btnVerificarCod">Verificar código</string>"
+    <string name="tvReenviarCod">¿No llegó el código?. <b>Reenviar</b></string>
 
 
     <string name="hello_blank_fragment">Hello blank fragment</string>

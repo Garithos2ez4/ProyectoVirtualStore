@@ -18,6 +18,8 @@ imagePickerV= "2.1"
 glideV="4.16.0"
 storageV="21.0.0"
 authGoogleV="21.0.0"
+ccpV="2.7.0"
+
 
 
 [libraries]
@@ -37,6 +39,7 @@ imagePicker={group="com.github.dhaval2404",name="imagepicker",version.ref="image
 glide={group="com.github.bumptech.glide",name="glide",version.ref="glideV"}
 storage={group="com.google.firebase",name="firebase-storage",version.ref="storageV"}
 authGoogle={group="com.google.android.gms",name="play-services-auth",version.ref="authGoogleV"}
+ccp={group="com.hbb20",name="ccp",version.ref="ccpV"}
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

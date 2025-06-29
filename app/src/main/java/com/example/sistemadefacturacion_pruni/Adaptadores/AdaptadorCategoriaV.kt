@@ -43,6 +43,7 @@ class AdaptadorCategoriaV : RecyclerView.Adapter<AdaptadorCategoriaV.HolderCateg
 
         val builer = AlertDialog.Builder(mContext)
 
+
             builer.setTitle("Eliminar categoria")
             builer.setMessage("Estas seguro de eliminar la categoria?")
             .setPositiveButton("Si"){a,d->
