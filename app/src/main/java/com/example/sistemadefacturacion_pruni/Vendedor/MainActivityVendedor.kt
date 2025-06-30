@@ -60,14 +60,37 @@ class MainActivityVendedor : AppCompatActivity() , NavigationView.OnNavigationIt
     }
 
     private fun comprobarSession() {
-        if (firebaseAuth!!.currentUser==null){
-            startActivity(
-                Intent(applicationContext,SeleccionarTipoActivity::class.java))
-
-        }else{
-            Toast.makeText(applicationContext,"Vendedor en linea",Toast.LENGTH_SHORT).show()
+        val usuarioActual = firebaseAuth!!.currentUser
+        if (usuarioActual == null) {
+            startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
+            finish()
+        } else {
+            val ref = com.google.firebase.database.FirebaseDatabase.getInstance().getReference("Usuarios")
+            ref.child(usuarioActual.uid).get()
+                .addOnSuccessListener { snapshot ->
+                    if (snapshot.exists()) {
+                        val tipoUsuario = snapshot.child("tipoUsuario").value.toString()
+                        if (tipoUsuario == "vendedor") {
+                            Toast.makeText(this, "Vendedor en línea", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Acceso denegado para este tipo de usuario", Toast.LENGTH_SHORT).show()
+                            firebaseAuth!!.signOut()
+                            startActivity(Intent(this, SeleccionarTipoActivity::class.java))
+                            finish()
+                        }
+                    } else {
+                        Toast.makeText(this, "Datos de usuario no encontrados", Toast.LENGTH_SHORT).show()
+                        firebaseAuth!!.signOut()
+                        startActivity(Intent(this, SeleccionarTipoActivity::class.java))
+                        finish()
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error al obtener datos: ${it.message}", Toast.LENGTH_SHORT).show()
+                }
         }
     }
+
 
 
     private fun replaceFragment(fragment: Fragment) {

@@ -163,21 +163,37 @@ private val googleSignInARL = registerForActivityResult(ActivityResultContracts.
         progressDialog.setMessage("Ingresando")
         progressDialog.show()
 
-        firebaseAuth.signInWithEmailAndPassword(email,password)
+        firebaseAuth.signInWithEmailAndPassword(email, password)
             .addOnSuccessListener {
-                progressDialog.dismiss()
-                startActivity(Intent(this, MainActivityCliente::class.java))
-                finish()
-                Toast.makeText(
-                    this,
-                    "Bienvenido(a)",
-                    Toast.LENGTH_SHORT
-
-                ).show()
+                val uid = firebaseAuth.uid
+                val ref = FirebaseDatabase.getInstance().getReference("Usuarios")
+                ref.child(uid!!).get()
+                    .addOnSuccessListener { snapshot ->
+                        progressDialog.dismiss()
+                        if (snapshot.exists()) {
+                            val tipoUsuario = snapshot.child("tipoUsuario").value.toString()
+                            if (tipoUsuario == "cliente") {
+                                startActivity(Intent(this, MainActivityCliente::class.java))
+                                finish()
+                                Toast.makeText(this, "Bienvenido Cliente", Toast.LENGTH_SHORT).show()
+                            } else {
+                                firebaseAuth.signOut()
+                                Toast.makeText(this, "Acceso denegado. No eres cliente.", Toast.LENGTH_SHORT).show()
+                            }
+                        } else {
+                            firebaseAuth.signOut()
+                            Toast.makeText(this, "Datos de usuario no encontrados", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                    .addOnFailureListener { e ->
+                        progressDialog.dismiss()
+                        Toast.makeText(this, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+                    }
             }
-            .addOnFailureListener { e->
-                Toast.makeText(this,"Fallo el login debido a ${e.message}",
-                    Toast.LENGTH_SHORT).show()
+            .addOnFailureListener { e ->
+                progressDialog.dismiss()
+                Toast.makeText(this, "Fallo el login: ${e.message}", Toast.LENGTH_SHORT).show()
             }
     }
+
 }

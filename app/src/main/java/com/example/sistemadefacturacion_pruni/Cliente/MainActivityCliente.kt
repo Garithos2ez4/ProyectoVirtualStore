@@ -50,14 +50,38 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
         binding.navigationView.setCheckedItem(R.id.op_inicio_c)
 
     }
-    private fun comprobarSesion (){
-        if (firebaseAuth!!.currentUser==null){
+    private fun comprobarSesion() {
+        val usuarioActual = firebaseAuth!!.currentUser
+        if (usuarioActual == null) {
             startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
             finish()
-        }else{
-            Toast.makeText(applicationContext,"Cliente en linea",Toast.LENGTH_SHORT).show()
+        } else {
+            val ref = com.google.firebase.database.FirebaseDatabase.getInstance().getReference("Usuarios")
+            ref.child(usuarioActual.uid).get()
+                .addOnSuccessListener { snapshot ->
+                    if (snapshot.exists()) {
+                        val tipoUsuario = snapshot.child("tipoUsuario").value.toString()
+                        if (tipoUsuario == "cliente") {
+                            Toast.makeText(this, "Cliente en línea", Toast.LENGTH_SHORT).show()
+                        } else {
+                            Toast.makeText(this, "Acceso denegado para este tipo de usuario", Toast.LENGTH_SHORT).show()
+                            firebaseAuth!!.signOut()
+                            startActivity(Intent(this, SeleccionarTipoActivity::class.java))
+                            finish()
+                        }
+                    } else {
+                        Toast.makeText(this, "Datos de usuario no encontrados", Toast.LENGTH_SHORT).show()
+                        firebaseAuth!!.signOut()
+                        startActivity(Intent(this, SeleccionarTipoActivity::class.java))
+                        finish()
+                    }
+                }
+                .addOnFailureListener {
+                    Toast.makeText(this, "Error al obtener datos: ${it.message}", Toast.LENGTH_SHORT).show()
+                }
         }
     }
+
     private fun cerrarSession(){
         firebaseAuth!!.signOut()
         startActivity(Intent(applicationContext, SeleccionarTipoActivity::class.java))
