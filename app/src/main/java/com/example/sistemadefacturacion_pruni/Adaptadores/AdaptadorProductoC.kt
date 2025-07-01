@@ -4,11 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.sistemadefacturacion_pruni.Modelos.ModeloProducto
 import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.databinding.ItemProdcutoCBinding
+import com.google.firebase.auth.FirebaseAuth
 
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -16,7 +18,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 
 class AdaptadorProductoC :RecyclerView.Adapter<AdaptadorProductoC.HolderProducto> {
-    private lateinit  var binding : ItemProdcutoCBinding
+    private lateinit var binding : ItemProdcutoCBinding
     private var mContext : Context
     private var productosArrayList = ArrayList<ModeloProducto>()
 
@@ -35,7 +37,6 @@ class AdaptadorProductoC :RecyclerView.Adapter<AdaptadorProductoC.HolderProducto
         return productosArrayList.size
 
     }
-
     override fun onBindViewHolder(holder: HolderProducto, position: Int) {
         val modeloProducto = productosArrayList[position]
 
@@ -49,22 +50,23 @@ class AdaptadorProductoC :RecyclerView.Adapter<AdaptadorProductoC.HolderProducto
         holder.item_nombre_p.text = "$nombre"
         holder.item_precio_p.text = "$precio USD"
 
-        // Por defecto los ocultamos
         holder.item_precio_p_desc.visibility = View.GONE
         holder.item_nota_p.visibility = View.GONE
 
-        // Mostramos si corresponde
         if (precioDescuento.isNotEmpty() && precioDescuento != "0" && notaDescuento.isNotEmpty() && notaDescuento != "0") {
             holder.item_precio_p_desc.text = "$precioDescuento USD"
             holder.item_nota_p.text = notaDescuento
             holder.item_precio_p_desc.visibility = View.VISIBLE
             holder.item_nota_p.visibility = View.VISIBLE
-
         }
 
-
-
+        // Aquí sí funciona correctamente:
+        holder.btnAgregarOrden.setOnClickListener {
+            agregarProductoAOrden(modeloProducto)
+        }
     }
+
+
 
 
     private fun cargarPrimeraImg(modeloProducto: ModeloProducto, holder: AdaptadorProductoC.HolderProducto) {
@@ -96,13 +98,36 @@ class AdaptadorProductoC :RecyclerView.Adapter<AdaptadorProductoC.HolderProducto
 
     }
 
-    inner class HolderProducto(itemView : View) : RecyclerView.ViewHolder(itemView){
+    inner class HolderProducto(itemView: View) : RecyclerView.ViewHolder(itemView) {
         var imagenP = binding.imagenP
         var item_nombre_p = binding.itemNombreP
         var item_precio_p = binding.itemPrecioP
         var item_precio_p_desc = binding.itemPrecioPDesc
         var item_nota_p = binding.itemNotaP
-
-
+        var btnAgregarOrden = binding.btnAgregarOrden
     }
+
+    private fun agregarProductoAOrden(modeloProducto: ModeloProducto) {
+        val firebaseAuth = FirebaseAuth.getInstance()
+        val ref = FirebaseDatabase.getInstance().getReference("Ordenes")
+        val datosOrden = HashMap<String, Any>()
+
+        datosOrden["id"] = modeloProducto.id
+        datosOrden["nombre"] = modeloProducto.nombre
+        datosOrden["descripcion"] = modeloProducto.descripcion
+        datosOrden["categoria"] = modeloProducto.categoria
+        datosOrden["precio"] = modeloProducto.precio
+        datosOrden["precioDescuento"] = modeloProducto.precioDescuento
+        datosOrden["notaDescuento"] = modeloProducto.notaDescuento
+
+        ref.child(firebaseAuth.uid!!).child(modeloProducto.id)
+            .setValue(datosOrden)
+            .addOnSuccessListener {
+                Toast.makeText(mContext, "Producto agregado a tu orden", Toast.LENGTH_SHORT).show()
+            }
+            .addOnFailureListener { e ->
+                Toast.makeText(mContext, "Error: ${e.message}", Toast.LENGTH_SHORT).show()
+            }
+    }
+
 }

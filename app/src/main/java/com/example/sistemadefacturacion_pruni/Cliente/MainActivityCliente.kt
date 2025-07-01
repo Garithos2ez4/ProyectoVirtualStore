@@ -46,8 +46,9 @@ class MainActivityCliente : AppCompatActivity(), NavigationView.OnNavigationItem
         binding.drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
 
-        replaceFragment(FragmentInicioCliente())
-        binding.navigationView.setCheckedItem(R.id.op_inicio_c)
+        replaceFragment(FragmentTiendaClienteC())
+        binding.navigationView.setCheckedItem(R.id.op_tienda_c)
+
 
     }
     private fun comprobarSesion() {

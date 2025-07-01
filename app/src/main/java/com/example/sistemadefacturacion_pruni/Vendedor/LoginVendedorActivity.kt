@@ -31,7 +31,7 @@ class LoginVendedorActivity : AppCompatActivity() {
           validarInfo()
         }
         binding.tvRegistrarV.setOnClickListener {
-            startActivity(Intent(applicationContext,RegistroVendedorActivity::class.java))
+            startActivity(Intent(this,RegistroVendedorActivity::class.java))
         }
 
     }

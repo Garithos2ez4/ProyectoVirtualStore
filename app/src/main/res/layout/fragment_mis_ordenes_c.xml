@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Cliente.Bottom_Nav_Fragments_Cliente.FragmentMisOrdenesC">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/ordenesCRV"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="MI ORDENES"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textStyle="bold"/>
+        app:spanCount="2"
+        tools:listitem="@layout/item_prodcuto_c"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"/>
 
 </FrameLayout>
