@@ -34,8 +34,7 @@ class SplashScreenActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                startActivity(Intent(applicationContext, MainActivityVendedor::class.java))
-                finishAffinity()
+                comprobarTipoUsuario()
             }
         }.start()
     }

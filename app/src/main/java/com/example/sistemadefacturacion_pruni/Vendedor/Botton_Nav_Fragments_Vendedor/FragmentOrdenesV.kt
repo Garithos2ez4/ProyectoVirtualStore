@@ -8,11 +8,6 @@ import android.view.ViewGroup
 import com.example.sistemadefacturacion_pruni.R
 
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentOrdenesV.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentOrdenesV : Fragment() {
 
 

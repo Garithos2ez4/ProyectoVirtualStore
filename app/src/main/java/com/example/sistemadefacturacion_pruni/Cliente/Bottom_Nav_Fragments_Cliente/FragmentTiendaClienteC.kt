@@ -6,7 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorCategoriaC
 import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorProductoC
+import com.example.sistemadefacturacion_pruni.Modelos.ModeloCategoria
 import com.example.sistemadefacturacion_pruni.Modelos.ModeloProducto
 import com.example.sistemadefacturacion_pruni.databinding.FragmentTiendaClienteBinding
 import com.google.firebase.database.DataSnapshot
@@ -52,7 +54,7 @@ class FragmentTiendaClienteC : Fragment() {
                     val modeloProducto = ds.getValue(ModeloProducto::class.java)
                     productoArrayList.add(modeloProducto!!)
                 }
-                adapterProducto = AdaptadorProductoC(mContext, productoArrayList)
+                adapterProducto = AdaptadorProductoC(mContext, productoArrayList, true, false, false)
                 binding.ProductoCliente.adapter = adapterProducto
 
             }
@@ -62,4 +64,22 @@ class FragmentTiendaClienteC : Fragment() {
             }
         })
     }
+    private fun listarCategorias() {
+        val categoriasList = ArrayList<ModeloCategoria>()
+        val ref = FirebaseDatabase.getInstance().getReference("Categorias")
+        ref.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot) {
+                categoriasList.clear()
+                for (ds in snapshot.children) {
+                    val modelo = ds.getValue(ModeloCategoria::class.java)
+                    categoriasList.add(modelo!!)
+                }
+                val adapter = AdaptadorCategoriaC(mContext, categoriasList)
+                binding.ProductoCliente.adapter = adapter
+            }
+
+            override fun onCancelled(error: DatabaseError) {}
+        })
+    }
+
 }

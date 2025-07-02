@@ -41,7 +41,7 @@ class ProductosCatActivity : AppCompatActivity() {
 
                             productosArrayList.add(modeloProducto!!)
                         }
-                    adaptadorProducto = AdaptadorProductoC( this@ProductosCatActivity, productosArrayList)
+                    adaptadorProducto = AdaptadorProductoC( this@ProductosCatActivity, productosArrayList,false,true,true)
                     binding.productosTV.adapter = adaptadorProducto
                 }
 

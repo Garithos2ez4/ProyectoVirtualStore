@@ -16,7 +16,6 @@ import com.google.firebase.database.ValueEventListener
 
 class AdaptadorProducto  : RecyclerView.Adapter<AdaptadorProducto.HolderProducto> {
 
-   // private var listaProductos = ArrayList<ModeloProducto>()
     private lateinit  var binding : ItemProductoBinding
     private var mContext : Context
     private var productosArrayList = ArrayList<ModeloProducto>()

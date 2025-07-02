@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorProducto
+import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorProductoVendedor
 import com.example.sistemadefacturacion_pruni.Modelos.ModeloProducto
 import com.example.sistemadefacturacion_pruni.R
 import com.example.sistemadefacturacion_pruni.databinding.FragmentMisProductosVBinding
@@ -22,7 +23,7 @@ class FragmentMisProductosV : Fragment() {
      private lateinit var mContext : Context
 
      private lateinit var productoArrayList : ArrayList<ModeloProducto>
-     private lateinit var adapterProducto : AdaptadorProducto
+     private lateinit var adapterProducto : AdaptadorProductoVendedor
 
      override fun onAttach(context: Context) {
          mContext = context
@@ -53,8 +54,9 @@ class FragmentMisProductosV : Fragment() {
                     val modeloProducto = ds.getValue(ModeloProducto::class.java)
                     productoArrayList.add(modeloProducto!!)
                 }
-                adapterProducto = AdaptadorProducto(productoArrayList,mContext)
+                adapterProducto = AdaptadorProductoVendedor(productoArrayList, mContext)
                 binding.productosRV.adapter = adapterProducto
+
             }
 
             override fun onCancelled(error: DatabaseError) {

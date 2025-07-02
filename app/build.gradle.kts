@@ -40,7 +40,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -56,6 +55,8 @@ dependencies {
     implementation(libs.authGoogle)/*Iniciar sesión con google*/
     implementation(platform("com.google.firebase:firebase-bom:33.1.0"))
     implementation(libs.ccp)/*Seleecionar codigo de telefono por país*/
+    implementation("com.itextpdf:itext7-core:7.2.5")
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

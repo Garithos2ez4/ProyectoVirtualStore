@@ -8,7 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorProducto
+import com.example.sistemadefacturacion_pruni.Adaptadores.AdaptadorProductoC
 import com.example.sistemadefacturacion_pruni.Modelos.ModeloProducto
 import com.example.sistemadefacturacion_pruni.databinding.FragmentMisOrdenesCBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -24,7 +24,7 @@ class FragmentMisOrdenesC : Fragment() {
     private lateinit var mContext: Context
 
     private lateinit var productoArrayList: ArrayList<ModeloProducto>
-    private lateinit var adapterProducto: AdaptadorProducto
+    private lateinit var adapterProducto: AdaptadorProductoC
     override fun onAttach(context: Context) {
         mContext = context
         super.onAttach(context)
@@ -55,8 +55,9 @@ class FragmentMisOrdenesC : Fragment() {
                     val modeloProducto = ds.getValue(ModeloProducto::class.java)
                     productoArrayList.add(modeloProducto!!)
                 }
-                adapterProducto = AdaptadorProducto(productoArrayList, mContext)
+                adapterProducto = AdaptadorProductoC(mContext, productoArrayList, false, true, true)
                 binding.ordenesCRV.adapter = adapterProducto
+
             }
 
             override fun onCancelled(error: DatabaseError) {
